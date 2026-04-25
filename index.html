@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f0f0f0;
+            padding: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            font-size: 24px;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Marks Predictor</h1>
+    <p>எத்தனை hours படிச்சீங்க?</p>
+
+    <form method="POST" action="/predict">
+        <input type="number" name="hours"
+               placeholder="Hours..." required>
+        <br><br>
+        <button type="submit">Predict! 🔮</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <p>{{ hours }} hours படிச்சா</p>
+        <p>Predicted Marks: {{ result }}! 🎯</p>
+    </div>
+    {% endif %}
+</body>
+</html>
